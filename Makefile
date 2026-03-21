@@ -1,4 +1,6 @@
-SRC = 	./src/btree.cpp \
+SRC =		./src/btree.cpp \
+			./src/btreeNode.cpp
+
 CC = g++
 CFLAG = Wall
 EXEC_NAME = Btree
