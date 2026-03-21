@@ -1,30 +1,17 @@
-#pragma once
+#include "./btreeNode.hpp"
 
-#include <vector>
-#include <iostream>
-
-class Btree {
-private:
-    std::vector<int> keys;
-    std::vector<Btree*> children;
-    bool is_leaf;
+class BTree {
+public:
+    BTreeNode *root;
     int t;
 
-public:
-    Btree(int t, bool is_leaf) : t(t*2-1), is_leaf(is_leaf) {}
-    ~Btree() {}
-    void splitChild(int index, Btree* child);
-    void insertNonFull(int key);
-    void insert(int key);
-    void display(void);
+    BTree(int _t);
+
+    void traverse();
+    BTreeNode* search(int k);
+    void insert(int k);
+
+    void printTree();
+    void printPretty();
+    void remove(int k);
 };
-
-void Btree::insert(int key) {
-    
-}
-
-void Btree::display(void) {
-    for (int key : this->keys) {
-        std::cout << key << " " << std::endl;
-    }
-}
